@@ -1,5 +1,5 @@
 document.getElementById('askButton').addEventListener('click', function(){
-    var randomNum = Math.floor(Math.random() * 9);
+    var randomNum = Math.floor(Math.random() * 10);
     var answer;
 
 if (randomNum === 0) {
@@ -24,6 +24,11 @@ if (randomNum === 0) {
     answer = "It's not going to happen.";
 }
 
-console.log("The magic eightball says: " + answer);
-
+//Check if a question is asked, trim method checks for a blank input
+let question = document.getElementById('question').value;
+if (question.trim()=== ''){
+    alert("Please enter a question.");
+} else {
+    document.getElementById('answer').textContent = answer;
+}
 });
